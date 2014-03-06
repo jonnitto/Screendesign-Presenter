@@ -1,0 +1,30 @@
+*{padding:0;margin:0;}
+body{background:white;font-size:12px;font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+img{display:block;}
+#intro{background-color:rgba(0,0,0,0.8);color:#eee;position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;padding:50px 200px 0;text-align:center;font-size:15px;}
+#intro,#intro *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing: border-box;}
+#intro h1{font-size:50px;font-weight:normal;border-bottom:1px solid rgba(255,255,255,0.5);margin-bottom:20px;}
+#intro p,#intro dl{margin-bottom:1em;}
+#intro dt {font-weight: bold;}
+#intro dd{margin-bottom:0.8em;}
+#intro li{list-style-type:none;}
+#intro table{margin:0 auto 1em;text-align:left;}
+#intro td,#intro th{padding:3px 5px;}
+#intro td,#intro th{padding:3px 5px;}
+#intro .row{margin-left:-15px;margin-right:-15px}#intro .row:before,.row:after{content:" ";display:table}#intro .row:after{clear:both}
+#intro .col{position:relative;min-height:1px;padding-left:15px;padding-right:15px;float:left;width:50%;}
+#intro .key{font-weight:normal;display:inline-block;padding:5px 5px 0;border:1px solid #888;height:30px;width:30px;text-align:center;border-radius:3px;margin:10px 0 5px;background:rgba(0,0,0,0.5)}
+#intro .widekey{width:auto;}
+#intro .space{width:150px;}
+#wrapper{position:relative;overflow-x:hidden;overflow-y:scroll;}
+#wrapper > *{display:none;position:absolute;top:0;left:50%;}
+#wrapper > * img {margin:0 auto;}
+#controls{position:fixed;left:0;bottom:0;padding:5px;min-width:50px;z-index:1;background:white;border-radius:0 4px 0 0;box-shadow:0 0 4px rgba(0,0,0,0.1);text-align:center;}
+#controls p{margin:0 10px 5px;}
+#controls a{display:inline-block;position:relative;width:10px;height:10px;background:#ccc;border:1px solid #bbb;border-radius:50%;margin:0 5px;padding:4px;text-decoration:none;}
+#controls a:hover{background:#777;border-color:#555;}
+#controls a:active{top:1px;}
+#controls a.disabled{cursor:default;background:#eee !important;border-color:#ddd !important;}
+#controls a:before{content:' ';height:0;position:absolute;top:4px;width:0;border:5px solid transparent;}
+#controls #prev:before{border-right-color:white;left:1px;}
+#controls #next:before{border-left-color:white;left:7px;}

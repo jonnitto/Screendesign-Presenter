@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo carAuktion 3.0</title>
+	<link href="assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="intro">
+		<h1>Welcome</h1>
+		<p>Use the following keys to navigate between the screens:</p>
+		<div class="row">
+			<dl class="col">
+				<dt><span class="key">&larr;</span></dt>
+				<dd>Go one slide back</dd>
+				<dt><span class="key">&rarr;</span></dt>
+				<dd>Go one slide forward</dd>
+				<dt><span class="key">&uarr;</span></dt>
+				<dd>Go to the first slide</dd>
+				<dt><span class="key">&darr;</span></dt>
+				<dd>Go to the last slide</dd>
+			</dl>
+			<dl class="col">
+				<dt><span class="widekey key">esc</span></dt>
+				<dd>Show/hide this message</dd>
+				<dt><span class="space key">space</span></dt>
+				<dd>
+					Next Step <br />
+					<small>Hide this message or go to the next slide. <br />If it is on the last slide, it returns to the first one.</small>
+				</dd>
+				<dt><span class="key">n</span></dt>
+				<dd>Show/hide the navigation</dd>
+				<dt><span class="key">0</span> - <span class="key">9</span></dt>
+				<dd>Go to slide number. 0 is slide number 10.</dd>
+			</dl>
+		</div>
+	</div>
+	<div id="wrapper">
+		<!-- Put here the pictures directly under "wrapper" or inside of a element (in a <div> for example) -->
+		<!-- Like that you can ad complete Screendesigns... -->
+		<img src="screens/Google.png" width="1440" height="799" alt="Google">
+		<img src="screens/TopGear.png" width="2800" height="3906" alt="Top Gear">
+		<img src="screens/TT-Coupe.png" width="1440" height="2599" alt="TT Coupé">
+
+		<!-- Or like that Screendesigns with more than one Element -->
+		<div>
+			<img src="slices/Header.png" width="1440" height="54" alt="Header">
+			<img src="slices/clear.png" width="1" height="131" alt="">
+			<img src="slices/Logo.png" width="371" height="111" alt="Logo">
+			<img src="slices/search.png" width="585" height="52" alt="Search">
+			<img src="slices/Buttons.png" width="371" height="104" alt="Buttons">
+			<img src="slices/clear.png" width="1" height="306" alt="">
+			<div style="width:100%;background:#F2F2F2;border-top:1px solid #E4E4E4;">
+				<img src="slices/Footer.png" width="1380" height="40" alt="Footer">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/browser.js"></script>
+	<script type="text/javascript" src="assets/js/hashchange.js"></script>
+	<script type="text/javascript" src="assets/js/onReady.js"></script>
+</body>
