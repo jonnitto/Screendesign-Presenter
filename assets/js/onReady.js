@@ -28,6 +28,9 @@ var wrapper,elements,showElementTimer;
 		$(this).css('marginLeft', - marginLeft);
 	});
 
+	if ($('body').data('show-intro')) {
+		$('#intro').show();
+	}
 	// More than one Screen
 	if (elementsLength > 1) {
 		// Add Navigation
