@@ -27,7 +27,12 @@ var wrapper,elements,showElementTimer;
 		var marginLeft = $(this).width() / 2;
 		$(this).css('marginLeft', - marginLeft);
 	});
-
+	$('html').keydown(function (e) {
+		if (e.which == 27 && $('#intro').length) {
+			// ESC: Show/Hide Intro
+			$('#intro').fadeToggle('slow');
+		}
+	});
 	if ($('body').data('show-intro')) {
 		$('#intro').show();
 	}
@@ -45,10 +50,7 @@ var wrapper,elements,showElementTimer;
 			}
 		});
 		$('html').keydown(function (e) {
-			if (e.which == 27 && $('#intro').length) {
-				// ESC: Show/Hide Intro
-				$('#intro').fadeToggle('slow');
-			} else if (e.which == 32) {
+			if (e.which == 32) {
 				// Space: Next Step
 				if ($('#intro:visible').length) {
 					$('#intro').fadeOut('slow');
