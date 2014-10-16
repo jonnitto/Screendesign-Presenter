@@ -34,3 +34,9 @@ img{display:block;}
 #controls a:before{content:' ';height:0;position:absolute;top:4px;width:0;border:5px solid transparent;}
 #controls #prev:before{border-right-color:white;left:1px;}
 #controls #next:before{border-left-color:white;left:7px;}
+@media print{
+	#controls,#intro {display: none;}
+	#wrapper{position:static;overflow-x:auto;overflow-y:auto;}
+}
+.capture #wrapper{position:static;overflow-x:auto;overflow-y:auto;}
+.capture #controls,.capture #intro {display: none;}

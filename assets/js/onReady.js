@@ -2,8 +2,9 @@ var wrapper,elements,showElementTimer;
 (function($){
 	wrapper = $('#wrapper');
 	elements = wrapper.children();
-	
+
 	var
+	body = $('body'),
 	elementsLength = elements.length,
 	showElement = function (newScreen) {
 		elements.fadeOut(300, function() {
@@ -16,7 +17,7 @@ var wrapper,elements,showElementTimer;
 		var lastElement  = newScreen >= elementsLength ? true : false,
 		firstElement  = newScreen > 1 ? false : true,
 		newScreen = lastElement ?  elementsLength : newScreen;
-		$('body').data('screen', newScreen);
+		body.data('screen', newScreen);
 		$('#prev').toggleClass('disabled', firstElement);
 		$('#next').toggleClass('disabled', lastElement);
 		$('#act').text(newScreen);
@@ -32,20 +33,23 @@ var wrapper,elements,showElementTimer;
 		if (e.which == 27 && $('#intro').length) {
 			// ESC: Show/Hide Intro
 			$('#intro').fadeToggle('slow');
+		} else if (e.which == 67) {
+			// c: Capture Mode on/off
+			body.toggleClass('capture');
 		}
 	});
-	if ($('body').data('show-intro')) {
+	if (body.data('show-intro')) {
 		$('#intro').show();
 	}
 	// More than one Screen
 	if (elementsLength > 1) {
 		// Add Navigation
-		$('body').append('<div id="controls"><p><span id="act"></span> | ' + elementsLength + '</p><a href="#" id="prev" title="Previous Screen"></a><a href="#" id="next" title="Next Screen"></a></div>');
-		
+		body.append('<div id="controls"><p><span id="act"></span> | ' + elementsLength + '</p><a href="#" id="prev" title="Previous Screen"></a><a href="#" id="next" title="Next Screen"></a></div>');
+
 		$('#controls a').click(function (e) {
 			e.preventDefault();
 			if (!$(this).hasClass('disabled')) {
-				var activeScreen = $('body').data('screen'),
+				var activeScreen = body.data('screen'),
 				newScreen = $(this).is('#prev') ? activeScreen - 1 : activeScreen + 1;
 				location.hash = newScreen;
 			}
@@ -55,7 +59,7 @@ var wrapper,elements,showElementTimer;
 				// Space: Next Step
 				if ($('#intro:visible').length) {
 					$('#intro').fadeOut('slow');
-				} else if ($('body').data('screen') == elementsLength) {
+				} else if (body.data('screen') == elementsLength) {
 					location.hash = 1;
 				} else {
 					$('#next').click();
@@ -63,13 +67,13 @@ var wrapper,elements,showElementTimer;
 			} else if (e.which == 37) {
 				// Left: Prevoius Screen
 				$('#prev').click();
-			} else if (e.which == 38 && $('body').data('screen') > 0) {
+			} else if (e.which == 38 && body.data('screen') > 0) {
 				// Up: First Screen
 				location.hash = 1;
 			} else if (e.which == 39) {
 				// Right: Next Screen
 				$('#next').click();
-			} else if (e.which == 40 && $('body').data('screen') < elementsLength) {
+			} else if (e.which == 40 && body.data('screen') < elementsLength) {
 				// Down: Last Screen
 				location.hash = elementsLength;
 			} else if (e.which == 78) {
