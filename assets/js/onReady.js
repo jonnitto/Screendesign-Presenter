@@ -3,7 +3,8 @@ var wrapper,elements,showElementTimer;
 	wrapper = $('#wrapper');
 	elements = wrapper.children();
 	
-	var elementsLength = elements.length,
+	var
+	elementsLength = elements.length,
 	showElement = function (newScreen) {
 		elements.fadeOut(300, function() {
 			clearTimeout(showElementTimer);
@@ -74,37 +75,47 @@ var wrapper,elements,showElementTimer;
 			} else if (e.which == 78) {
 				// n: Show/Hide Navigation
 				$('#controls').fadeToggle('slow');
-			} else if (47 < e.which && e.which < 58) {
+			} else if ((47 < e.which && e.which < 58) || (95 < e.which && e.which < 106)) {
 				// Numbers
 				switch (e.which) {
 					case 48:
+					case 96:
 					location.hash = 10;
 					break;
 					case 49:
+					case 97:
 					location.hash = 1;
 					break;
 					case 50:
+					case 98:
 					location.hash = 2;
 					break;
 					case 51:
+					case 99:
 					location.hash = 3;
 					break;
 					case 52:
+					case 100:
 					location.hash = 4;
 					break;
 					case 53:
+					case 101:
 					location.hash = 5;
 					break;
 					case 54:
+					case 102:
 					location.hash = 6;
 					break;
 					case 55:
+					case 103:
 					location.hash = 7;
 					break;
 					case 56:
+					case 104:
 					location.hash = 8;
 					break;
 					case 57:
+					case 105:
 					location.hash = 9;
 					break;
 				}
