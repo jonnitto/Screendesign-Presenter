@@ -1,8 +1,9 @@
-#Screendesign Presenter
+# Screendesign Presenter
 
 With this tool, you can easily present your screen designs. You can present either complete designs or desings who are split into separate images. Just add the elements in `<div id="wrapper"></div>` and you are done.
 
-##Keyboard control
+## Keyboard control
+
 Key     | Action
 :------:|-------
 &larr;  | Go one slide back
